@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copy Promo Code and Redirect</title>
+</head>
+<body>
+
+<!-- Button that the user will click -->
+<button id="copyButton">Copy Promo Code</button>
+
+<script>
+// Function to copy text and redirect
+function copyTextToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        console.log('Copying to clipboard was successful!');
+
+        // Redirect to Google.com after successful copy
+        window.location.href = "https://www.google.com";
+    }, function(err) {
+        console.error('Could not copy text: ', err);
+    });
+}
+
+// Add click event listener to the button
+document.getElementById('copyButton').addEventListener('click', function() {
+    // Text to be copied
+    var textToCopy = "PROMO CODE HERE";
+    // Call the function with the text
+    copyTextToClipboard(textToCopy);
+});
+</script>
+
+</body>
+</html>
